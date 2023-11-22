@@ -60,6 +60,7 @@ export const GalleryModal = ({
               &rsaquo;
             </a>
           )}
+          <h3 className="onClick-modal-img-text">Speech bubble message</h3>
           <img src={src} alt="modal-img" />
         </div>
       </div>
