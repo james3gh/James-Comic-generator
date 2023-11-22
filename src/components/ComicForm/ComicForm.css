@@ -1,0 +1,67 @@
+@media only screen and (min-width: 32rem) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (min-width: 48rem) {
+  h1 {
+    font-size: 5rem;
+  }
+}
+
+.wrapper {
+  max-width: 64rem;
+  margin: 2rem auto;
+}
+
+form {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  display: block;
+}
+
+@media only screen and (min-width: 48rem) {
+  form {
+    display: flex;
+  }
+}
+
+input[type="text"] {
+  border: 2px solid black;
+  line-height: 3rem;
+  padding: 0 1rem;
+  width: 100%;
+  font-size: medium;
+  box-sizing: border-box;
+}
+
+button {
+  background: #cc0051;
+  line-height: 3rem;
+  color: #fff;
+  border: none;
+  padding: 0 3rem;
+  margin-top: 1rem;
+  width: 100%;
+  font-size: large;
+}
+
+button:hover {
+  background: #ee2c7a98;
+  border-radius: 0.5rem;
+  transition: all 1s;
+}
+
+@media only screen and (min-width: 32rem) {
+  button {
+    width: auto;
+  }
+}
+
+@media only screen and (min-width: 48rem) {
+  button {
+    margin-left: 1rem;
+    margin-top: 0;
+  }
+}

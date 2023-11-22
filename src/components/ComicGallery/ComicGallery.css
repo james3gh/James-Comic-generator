@@ -1,0 +1,241 @@
+/* Apply box-sizing to all elements */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/* Set base font size for HTML */
+html {
+  font-size: 16px;
+}
+
+/* Style the body */
+body {
+  font-family: helvetica;
+  position: relative;
+  font-size: 100%;
+  background: #d1913c;
+  background: -webkit-linear-gradient(to right, #ffd194, #d1913c);
+  background: linear-gradient(to right, #ffd194, #d1913c);
+}
+
+/* Style the gallery container */
+.gallery-container {
+  padding: 0.9375rem 0;
+}
+
+/* Style the gallery grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 8px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Media queries for responsive layout */
+@media screen and (max-width: 767px) {
+  .gallery-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Style the gallery images */
+.gallery-grid img {
+  width: 100%;
+  height: 300px;
+  border: 5px solid #fff;
+}
+
+/* Style the gallery grid divs for hover effect */
+.gallery-grid div {
+  position: relative;
+  cursor: pointer;
+}
+
+.gallery-grid div:before,
+.gallery-grid div:after {
+  transition: 0.3s opacity ease;
+  opacity: 0;
+}
+
+.gallery-grid div:after {
+  content: "\02194";
+  font-size: 80px;
+  position: absolute;
+  transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+  color: #fff;
+  left: 50%;
+  top: 50%;
+  display: block;
+}
+
+.gallery-grid div:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  background: rgba(34, 34, 34, 0.5);
+  display: block;
+}
+
+.gallery-grid div:hover:before,
+.gallery-grid div:hover:after {
+  opacity: 1;
+  transition: 0.3s opacity ease;
+}
+
+/* Style the modal */
+.modal {
+  position: fixed;
+  z-index: 999;
+  width: 50%;
+  max-width: 800px;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+/* Media queries for modal responsive layout */
+@media screen and (max-width: 767px) {
+  .modal {
+    width: 95%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .modal {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .modal {
+    width: 60%;
+  }
+}
+
+/* Style the modal images */
+.modal img {
+  width: 100%;
+  height: 35rem;
+  border: 5px solid #fff;
+}
+
+/* Style the modal overlay */
+.modal-overlay {
+  position: fixed;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+}
+
+/* Style the modal body links */
+.modal-body a {
+  position: absolute;
+  display: inline;
+  color: #222;
+  text-decoration: none;
+  line-height: 36px;
+  font-size: 30px;
+  font-weight: lighter;
+  background: #fff;
+  border-radius: 5px;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+}
+
+/* Style the modal close button */
+.modal-body .modal-close {
+  right: 0;
+  top: 0;
+  border-radius: 0 0 0 5px;
+}
+
+/* Style the modal navigation buttons */
+.modal-body .modal-next,
+.modal-body .modal-prev {
+  right: 0;
+  top: calc(50% - 25px);
+  border-radius: 5px 0 0 5px;
+  height: 50px;
+  line-height: 40px;
+  font-size: 60px;
+}
+
+.modal-body .modal-prev {
+  left: 0;
+  right: auto;
+  border-radius: 0 5px 5px 0;
+}
+
+/* Style the modal body */
+.modal-body {
+  position: relative;
+}
+
+/* tooltip  */
+.tooltip {
+  position: relative;
+  border-bottom: 1px dotted black;
+}
+
+.oval-thought {
+  visibility: hidden;
+  position: absolute;
+  width: 180px;
+  padding: 30px 20px;
+  /* margin: 1em auto 80px; */
+  text-align: center;
+  color: white;
+  right: 0px;
+  z-index: 1;
+  background: linear-gradient(#2e88c4, #075698);
+  border-radius: 220px / 120px;
+}
+
+.oval-thought:before {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 40px;
+  width: 30px;
+  height: 30px;
+  background: #075698;
+  border-radius: 30px;
+}
+
+.oval-thought:after {
+  content: "";
+  position: absolute;
+  bottom: -45px;
+  left: 25px;
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  background: #075698;
+}
+
+.tooltip:hover .oval-thought {
+  visibility: visible;
+}
