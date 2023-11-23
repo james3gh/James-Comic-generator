@@ -10,6 +10,7 @@ function ComicGallery({ imgUrls }) {
       <div className="tooltip">
         <img src={src} alt={`gallery-img-${index}`} />
         <span className="oval-thought">Speech bubble message {index + 1}</span>
+        <h2 className="open-image">Open</h2>
       </div>
     </div>
   );

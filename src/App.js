@@ -9,8 +9,6 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // const [chatMessages, setChatMessages] = useState([]);
-
   const makeSpinner = () => (
     <div className="spinner">
       <div className="bounce1"></div>
@@ -23,7 +21,7 @@ function App() {
     try {
       setLoading(true);
 
-      const apiCalls = Array.from({ length: 3 }, async (_, index) => {
+      const apiCalls = Array.from({ length: 10 }, async (_, index) => {
         const response = await query({ inputs: textInput });
         return { image: response };
       });
@@ -45,7 +43,16 @@ function App() {
         <h1 className="main_heading">Comic Generator</h1>
         <ComicForm generateComic={generateComic} />
         {error && <p>API Error: {error}</p>}
-        {loading ? makeSpinner() : <ComicGallery imgUrls={comicImages} />}
+        {loading ? (
+          <>
+            {" "}
+            <h3>
+              API might take 5 minutes to load images
+            </h3> {makeSpinner()}{" "}
+          </>
+        ) : (
+          <ComicGallery imgUrls={comicImages} />
+        )}
       </div>
     </div>
   );

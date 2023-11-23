@@ -45,12 +45,12 @@ button {
   margin-top: 1rem;
   width: 100%;
   font-size: large;
+  transition: all 0.7s ease-in-out;
 }
 
 button:hover {
-  background: #ee2c7a98;
+  opacity: 0.7;
   border-radius: 0.5rem;
-  transition: all 1s;
 }
 
 @media only screen and (min-width: 32rem) {

@@ -10,6 +10,7 @@ function ComicForm({ generateComic }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (textInput.trim().length === 0) return;
     generateComic(textInput);
   };
 
@@ -20,6 +21,7 @@ function ComicForm({ generateComic }) {
           type="text"
           value={textInput}
           onChange={handleInputChange}
+          required
           placeholder="Enter your search word here..."
         />
         <button className="search-button" type="submit">
