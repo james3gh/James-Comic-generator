@@ -1,8 +1,40 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ComicGallery from "./components/ComicGallery/ComicGallery";
 import ComicForm from "./components/ComicForm/ComicForm";
 import query from "./api/queryApi";
 import "./App.css";
+
+function Header() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const body = document.body;
+    const toggle = document.querySelector(".toggle-inner");
+
+    // If dark mode is enabled - adds classes to update dark-mode styling.
+    // Else, removes and styling is as normal.
+    if (darkMode === true) {
+      body.classList.add("dark-mode");
+      toggle.classList.add("toggle-active");
+    } else {
+      body.classList.remove("dark-mode");
+      toggle.classList.remove("toggle-active");
+    }
+  }, [darkMode]);
+
+  return (
+    <header>
+      <div
+        id="toggle"
+        onClick={() =>
+          darkMode === false ? setDarkMode(true) : setDarkMode(false)
+        }
+      >
+        <div className="toggle-inner" />
+      </div>
+    </header>
+  );
+}
 
 function App() {
   const [comicImages, setComicImages] = useState([]);
@@ -21,7 +53,7 @@ function App() {
     try {
       setLoading(true);
 
-      const apiCalls = Array.from({ length: 10 }, async (_, index) => {
+      const apiCalls = Array.from({ length: 6 }, async (_, index) => {
         const response = await query({ inputs: textInput });
         return { image: response };
       });
@@ -39,7 +71,8 @@ function App() {
 
   return (
     <div className="container">
-      <div className="center_div">
+      <Header />
+      <div className="center-div">
         <h1 className="main_heading">Comic Generator</h1>
         <ComicForm generateComic={generateComic} />
         {error && <p>API Error: {error}</p>}

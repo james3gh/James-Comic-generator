@@ -5,16 +5,17 @@
 
 .container {
   height: 100vh;
-  background-image: url("https://img.freepik.com/premium-vector/comics-rays-background-with-halftones_175838-447.jpg");
-  background-color: #716b6b;
+  background-image: url("./fonts/bg_image1.png");
   background-size: cover;
   background-position: center;
   color: white;
   text-align: center;
+  background-color: #f7fafc;
+  transition: background-color 0.2s ease-in;
 }
 
-.center_div {
-  font-family: "Ubuntu", sans-serif;
+.center-div {
+  font-family: "Sketch_3D", "Ubuntu", cursive;
   padding-top: 150px;
 }
 
@@ -75,5 +76,53 @@
   40% {
     -webkit-transform: scale(1);
     transform: scale(1);
+  }
+}
+
+/* dark mode  */
+header {
+  position: absolute;
+}
+
+#toggle {
+  width: 50px;
+  display: flex;
+  padding: 5px;
+  background-color: #1a202c;
+  display: block;
+  border-radius: 1000px;
+  cursor: pointer;
+  box-shadow: 0px 5px 20px -10px #000000;
+  transition: background-color 0.2s ease-in;
+
+  .toggle-inner {
+    width: 20px;
+    height: 15px;
+    background-color: white;
+    border-radius: 1000px;
+    transition: margin-left 0.2s ease-in, background-color 0.2s ease-in;
+
+    &.toggle-active {
+      margin-left: 20px;
+    }
+  }
+}
+
+/* Dark Mode styling */
+/* ------------------------------------- */
+
+.dark-mode {
+  color: white;
+
+  .container {
+    background-image: url("./fonts/bg_image2.png");
+  }
+
+  #toggle {
+    background-color: white;
+
+    .toggle-inner {
+      background-color: #1a202c;
+    }
   }
 }

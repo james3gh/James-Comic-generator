@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Draggable from "react-draggable";
 import "./ComicGallery.css";
 
 export const GalleryModal = ({
@@ -60,7 +61,9 @@ export const GalleryModal = ({
               &rsaquo;
             </a>
           )}
-          <h3 className="onClick-modal-img-text">Speech bubble message</h3>
+          <Draggable axis="both">
+            <h3 className="onClick-modal-img-text">Speech bubble message</h3>
+          </Draggable>
           <img src={src} alt="modal-img" />
         </div>
       </div>

@@ -22,7 +22,7 @@ function ComicForm({ generateComic }) {
           value={textInput}
           onChange={handleInputChange}
           required
-          placeholder="Enter your search word here..."
+          placeholder="Enter your search text here..."
         />
         <button className="search-button" type="submit">
           Search
