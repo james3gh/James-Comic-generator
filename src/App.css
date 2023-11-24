@@ -4,8 +4,8 @@
 }
 
 .container {
-  height: 100vh;
-  background-image: url("./fonts/bg_image1.png");
+  height: auto;
+  background-image: url("./assets/bg_image1.png");
   background-size: cover;
   background-position: center;
   color: white;
@@ -15,8 +15,8 @@
 }
 
 .center-div {
-  font-family: "Sketch_3D", "Ubuntu", cursive;
-  padding-top: 150px;
+  font-family: "Ubuntu", "Sans-sarif";
+  padding-top: 120px;
 }
 
 .main_heading {
@@ -79,15 +79,17 @@
   }
 }
 
-/* dark mode  */
+/* toggle mode  */
 header {
   position: absolute;
 }
 
 #toggle {
+  margin: 15px;
   width: 50px;
   display: flex;
   padding: 5px;
+  z-index: 4;
   background-color: #1a202c;
   display: block;
   border-radius: 1000px;
@@ -108,14 +110,14 @@ header {
   }
 }
 
-/* Dark Mode styling */
+/* Background image styling */
 /* ------------------------------------- */
 
 .dark-mode {
   color: white;
 
   .container {
-    background-image: url("./fonts/bg_image2.png");
+    background-image: url("./assets/bg_image2.png");
   }
 
   #toggle {

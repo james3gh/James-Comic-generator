@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { GalleryModal } from "./ComicModal";
-import Draggable from "react-draggable";
 import "./ComicGallery.css";
 
 function ComicGallery({ imgUrls }) {
@@ -11,9 +10,7 @@ function ComicGallery({ imgUrls }) {
       <div className="tooltip">
         <img src={src} alt={`gallery-img-${index}`} />
         <span className="oval-thought">Speech bubble message {index + 1}</span>
-        <Draggable axis="both" bounds="parent">
-          <h2 className="open-image">Open</h2>
-        </Draggable>
+        <h2 className="open-image">Open</h2>
       </div>
     </div>
   );

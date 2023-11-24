@@ -31,7 +31,7 @@ export const GalleryModal = ({
   return (
     <div>
       <div className="modal-overlay" onClick={closeModal}></div>
-      <div className="modal" isOpen={!!src}>
+      <div className="modal">
         <div className="modal-body">
           <a
             href="/#"
