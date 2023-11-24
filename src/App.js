@@ -6,16 +6,16 @@ import "./App.css";
 
 function Animation() {
   return (
-    <div class="pen">
-      <div class="light x1"></div>
-      <div class="light x2"></div>
-      <div class="light x3"></div>
-      <div class="light x4"></div>
-      <div class="light x5"></div>
-      <div class="light x6"></div>
-      <div class="light x7"></div>
-      <div class="light x8"></div>
-      <div class="light x9"></div>
+    <div className="pen">
+      <div className="light x1"></div>
+      <div className="light x2"></div>
+      <div className="light x3"></div>
+      <div className="light x4"></div>
+      <div className="light x5"></div>
+      <div className="light x6"></div>
+      <div className="light x7"></div>
+      <div className="light x8"></div>
+      <div className="light x9"></div>
     </div>
   );
 }
@@ -37,7 +37,7 @@ function App() {
     try {
       setLoading(true);
 
-      const apiCalls = Array.from({ length: 6 }, async (_, index) => {
+      const apiCalls = Array.from({ length: 1 }, async (_, index) => {
         const response = await query({ inputs: textInput });
         return { image: response };
       });
