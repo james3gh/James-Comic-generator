@@ -1,38 +1,22 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ComicGallery from "./components/ComicGallery/ComicGallery";
 import ComicForm from "./components/ComicForm/ComicForm";
 import query from "./api/queryApi";
 import "./App.css";
 
-function Header() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    const body = document.body;
-    const toggle = document.querySelector(".toggle-inner");
-
-    // If dark mode is enabled - adds classes to update dark-mode styling.
-    // Else, removes and styling is as normal.
-    if (darkMode === true) {
-      body.classList.add("dark-mode");
-      toggle.classList.add("toggle-active");
-    } else {
-      body.classList.remove("dark-mode");
-      toggle.classList.remove("toggle-active");
-    }
-  }, [darkMode]);
-
+function Animation() {
   return (
-    <header>
-      <div
-        id="toggle"
-        onClick={() =>
-          darkMode === false ? setDarkMode(true) : setDarkMode(false)
-        }
-      >
-        <div className="toggle-inner" />
-      </div>
-    </header>
+    <div class="pen">
+      <div class="light x1"></div>
+      <div class="light x2"></div>
+      <div class="light x3"></div>
+      <div class="light x4"></div>
+      <div class="light x5"></div>
+      <div class="light x6"></div>
+      <div class="light x7"></div>
+      <div class="light x8"></div>
+      <div class="light x9"></div>
+    </div>
   );
 }
 
@@ -71,7 +55,7 @@ function App() {
 
   return (
     <div className="container">
-      <Header />
+      <Animation />
       <div className="center-div">
         <h1 className="main_heading">Comic Generator</h1>
         <ComicForm generateComic={generateComic} />
