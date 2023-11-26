@@ -37,7 +37,7 @@ function App() {
     try {
       setLoading(true);
 
-      const apiCalls = Array.from({ length: 1 }, async (_, index) => {
+      const apiCalls = Array.from({ length: 10 }, async (_, index) => {
         const response = await query({ inputs: textInput });
         return { image: response };
       });
